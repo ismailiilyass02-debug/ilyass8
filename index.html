@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Love Trap ❤️</title>
+
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            font-family: Arial;
+            background: linear-gradient(135deg, #ff4e8a, #ff9a9e);
+            text-align: center;
+            color: white;
+        }
+
+        h1 {
+            margin-top: 80px;
+            font-size: 40px;
+        }
+
+        button {
+            padding: 12px 25px;
+            font-size: 20px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            position: absolute;
+            transition: 0.2s;
+        }
+
+        #yes {
+            position: static;
+            background: #00ff88;
+            color: black;
+        }
+
+        #no {
+            background: #ff3333;
+            color: white;
+        }
+
+        .heart {
+            position: absolute;
+            font-size: 20px;
+            animation: float 3s linear infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0); opacity: 1; }
+            100% { transform: translateY(-800px); opacity: 0; }
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>السلام 😗 سمحي ليا غنخدمك واحد الشوية  بغيت غانسولك حسيت بلي كتبغيني هدشي بصح ياك ؟🙂❤️</h1>
+
+<button id="yes" onclick="love()">اه عندك الصح 😍</button>
+<button id="no" onmouseover="escape()">لا 😭</button>
+
+<script>
+let speed = 1;
+
+function escape() {
+    let btn = document.getElementById("no");
+
+    let x = Math.random() * (window.innerWidth - 100);
+    let y = Math.random() * (window.innerHeight - 50);
+
+    speed += 0.3;
+
+    btn.style.transition = speed * 0.1 + "s";
+    btn.style.left = x + "px";
+    btn.style.top = y + "px";
+}
+
+function love() {
+    for (let i = 0; i < 100; i++) {
+        let heart = document.createElement("div");
+        heart.innerHTML = "❤️";
+        heart.className = "heart";
+
+        heart.style.left = Math.random() * window.innerWidth + "px";
+        heart.style.top = window.innerHeight + "px";
+        heart.style.fontSize = (Math.random() * 30 + 10) + "px";
+
+        document.body.appendChild(heart);
+
+        setTimeout(() => {
+            heart.remove();
+        }, 3000);
+    }
+
+    document.body.innerHTML += "<h1>كنت عاااااااااااارف هيههيهيهيههيهيههييهي 😎❤️</h1>";
+}
+</script>
+
+</body>
+</html>
